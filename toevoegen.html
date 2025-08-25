@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nieuw item – Mijn Media Bibliotheek</title>
+  <link rel="stylesheet" href="Css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>➕ Nieuw item</h1>
+      <p class="subtitle">Voeg een boek, film, game of ander medium toe. Alles wordt lokaal opgeslagen.</p>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card" style="grid-column: 1/-1">
+      <div class="head">Formulier</div>
+      <div class="body">
+        <form id="itemForm">
+          <label for="type">Type</label>
+          <select id="type" required>
+            <option>Boek</option>
+            <option>Manhwa</option>
+            <option>Film</option>
+            <option>Serie</option>
+            <option>Anime</option>
+            <option>Game</option>
+            <option>Muziek</option>
+          </select>
+
+          <div class="row">
+            <div>
+              <label for="title">Titel</label>
+              <input id="title" type="text" required />
+            </div>
+            <div>
+              <label for="tags">Tags (komma-gescheiden)</label>
+              <input id="tags" type="text" />
+            </div>
+          </div>
+
+          <label for="date">Datum</label>
+          <input id="date" type="date"  />
+
+          <label>Beoordeling</label>
+          <div id="ratingInput" class="stars"></div>
+
+          <label>Omslag (JPG)</label>
+          <div id="drop" class="drop">
+            <div class="left">
+              <div class="thumb" id="thumb"><small>Geen<br>afbeelding</small></div>
+              <div>
+                <div style="font-weight:600">Upload omslag</div>
+                <small>Alleen .jpg/.jpeg</small>
+              </div>
+            </div>
+            <div>
+              <button type="button" class="btn secondary" id="pickBtn">Kies bestand</button>
+              <input id="file" type="file" accept=".jpg,.jpeg" hidden />
+            </div>
+          </div>
+
+          <div class="actions" style="margin-top:14px">
+            <button class="btn" type="submit" id="saveBtn">Opslaan</button>
+            <button class="btn ghost" type="button" id="resetBtn">Leegmaken</button>
+            <a href="index.html" class="btn secondary">⬅ Terug</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="Javascript/index.js"></script>
+  <script>
+    // start formulierpagina
+    initFormPage();
+  </script>
+</body>
+
+</html>

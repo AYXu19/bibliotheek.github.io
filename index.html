@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mijn Media Bibliotheek</title>
+    <link rel="stylesheet" href="Css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>📚🎬🎮 Mijn Media Bibliotheek</h1>
+            <p class="subtitle">Overzicht van al je boeken, films, games & meer – lokaal opgeslagen in LocalStorage.</p>
+        </div>
+    </header>
+
+    <main class="wrap grid">
+        <!-- Toolbar + lijst -->
+        <section class="card" style="grid-column: 1/-1">
+            <div class="head">Mijn items</div>
+            <div class="body">
+                <div class="toolbar">
+                    <input id="search" type="text" placeholder="Zoeken op titel of tags..." />
+                    <select id="filterType">
+                        <option value="">Alle types</option>
+                        <option>Boek</option>
+                        <option>Manhwa</option>
+                        <option>Film</option>
+                        <option>Serie</option>
+                        <option>Anime</option>
+                        <option>Game</option>
+                        <option>Muziek</option>
+                    </select>
+
+                    <select id="filterRating">
+                        <option value="0">Min. rating: alle</option>
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★☆ of meer</option>
+                        <option value="3">★★★☆☆ of meer</option>
+                        <option value="2">★★☆☆☆ of meer</option>
+                        <option value="1">★☆☆☆☆ of meer</option>
+                    </select>
+                    <select id="sort">
+                        <option value="created_desc">Nieuwste eerst</option>
+                        <option value="created_asc">Oudste eerst</option>
+                        <option value="rating_desc">Hoogste rating</option>
+                        <option value="rating_asc">Laagste rating</option>
+                        <option value="title_asc">Titel A→Z</option>
+                        <option value="title_desc">Titel Z→A</option>
+                    </select>
+                    <a href="toevoegen.html" class="btn">+ Nieuw item</a>
+                </div>
+
+                <div id="cards" class="cards"></div>
+                <div id="empty" class="empty" style="display:none">Nog geen items. Voeg er eentje toe!</div>
+            </div>
+        </section>
+    </main>
+
+    <template id="mediaTemplate">
+        <article class="media">
+            <div class="cover"><img alt="Omslag"></div>
+            <div class="info">
+                <div class="meta">
+                    <span class="pill type"></span>
+                    <span class="rating-display"><span class="stars-text"></span></span>
+                </div>
+                <div class="title"></div>
+                <div class="muted tags"></div>
+                <div class="desc"></div>
+                <div class="btns">
+                    <a class="btn secondary edit">Bewerken</a>
+                    <button class="btn danger del">Verwijderen</button>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <script src="Javascript/index.js"></script>
+    <script>
+        // start lijstpagina
+        initListPage();
+    </script>
+</body>
+
+</html>
